@@ -3,7 +3,13 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.createTable("Challenge", {
+    /**
+     * Add altering commands here.
+     *
+     * Example:
+     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
+     */
+    return queryInterface.createTable("challenges", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -31,12 +37,6 @@ module.exports = {
         allowNull: false,
       },
     });
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
   },
 
   async down(queryInterface, Sequelize) {
@@ -46,6 +46,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    return queryInterface.dropTable("Challenge");
+    return queryInterface.dropTable("challenges");
   },
 };
