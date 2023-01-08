@@ -4,7 +4,7 @@ module.exports = {
     port: process.env.POSTGRES_PORT,
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
-    user: process.env.POSTGRES_USER,
+    username: process.env.POSTGRES_USER,
   },
   port: process.env.PORT,
 };
