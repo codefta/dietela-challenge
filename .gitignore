@@ -4,3 +4,5 @@ cmd/web/node_modules
 
 .env
 cmd/web/.env
+
+deploy/local/db
