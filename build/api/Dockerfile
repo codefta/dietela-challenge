@@ -1,7 +1,11 @@
-FROM node:18.12.1-alpine3.9 AS builder
-WORKDIR /app
+FROM node:16
 
-COPY ./package.json ./
-COPY ./app ./app
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
 RUN npm install
 
+COPY . /usr/src/app
+
+CMD [ "npm", "start" ]
