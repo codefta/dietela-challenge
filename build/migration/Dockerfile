@@ -6,9 +6,13 @@ COPY migrations/config/db.js .
 COPY migrations/.sequelizerc .
 COPY migrations/package*.json .
 COPY migrations/files ./files
+COPY migrations/seeders ./seeders
+COPY build/migration/script.sh .
+
+RUN chmod +x script.sh
 
 RUN npm install
 RUN npm i -g sequelize-cli
 
 
-CMD [ "npm", "run", "migrate:up" ] 
+ENTRYPOINT [ "./script.sh"] 
